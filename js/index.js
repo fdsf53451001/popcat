@@ -22,7 +22,10 @@ function banHappened(){
 }
 
 document.addEventListener('keydown',onKeyPressed);
+document.addEventListener('mousedown',onKeyPressed);
+
 document.addEventListener('keyup',onKeyReleased);
+document.addEventListener('mouseup',onKeyReleased);
 
 setInterval(function(){ //watchdog, used to prevent bot
     if(point-last_point>100){
