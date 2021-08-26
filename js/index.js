@@ -1,25 +1,31 @@
+function update_point(p){
+    point = p;
+    set_point_view();
+}
+
 function onKeyPressed(e){
     if(status==0 && !ban){
-        console.log(123);
-        document.getElementById('cat').setAttribute('src','src/CAT2.JPG')
+        document.getElementById('cat').setAttribute('src',styles[current_style][2])
         status=1;
     }
 }
 
 function onKeyReleased(e){
     if(status==1 && !ban){
-        console.log(456);
-        document.getElementById('cat').setAttribute('src','src/CAT1.JPG');
-        point+=1;
-        document.getElementById('point').innerHTML = point;
+        document.getElementById('cat').setAttribute('src',styles[current_style][1]);
+        update_point(point+1);
+        set_point_view();
         status=0;
     }
 }
 
 function banHappened(){
     ban = true;
-    document.getElementById('cat').setAttribute('src','src/CAT_ERR.JPG');
+    document.getElementById('cat').setAttribute('src',styles[current_style][3]);
 }
+
+// initialize
+document.getElementById('cat').setAttribute('src',styles[current_style][1]);
 
 document.addEventListener('keydown',onKeyPressed);
 document.addEventListener('mousedown',onKeyPressed);
@@ -33,3 +39,5 @@ setInterval(function(){ //watchdog, used to prevent bot
     }
     last_point = point
 },1000);
+
+set_style_sel();

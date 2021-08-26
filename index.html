@@ -1,18 +1,25 @@
 <!DOCTYPE html>
 <head>
-    <link rel="stylesheet" href="index.css">
-    <script src='js\global.js'></script>
-    <script src='js\index.js'></script>
+    <link rel="stylesheet" href="index.css">    
 </head>
 <body>
     <div id="title">
-        <h1>POPCAT</h1>
-        <div id="point-display" style="display: flex;">
-            <h1>point=</h1>
+        <div id="point-display" class="display-center">
+            <h1>POPCAT point=</h1>
             <h1 id='point'>0</h1>
         </div>
     </div>
-    <div id="cat-area">
+
+    <div id="cat-area" class="display-center">
         <img id='cat' src='src\CAT1.JPG'/>
     </div>
+    <br/>
+    <div id="sel-style" class='display-center'>
+        <!-- <img class='sel-style-item' src='src\CAT1.JPG'/>
+        <img class='sel-style-item' src='src\CAT21.JPG'/> -->
+    </div>
+
+    <script src='js\global.js'></script>
+    <script src='js\view.js'></script>
+    <script src='js\index.js'></script>
 </body>

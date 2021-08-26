@@ -1,4 +1,15 @@
 #cat{
-    height: 640px;
-    width: 640px;
+    height: 60vh;
+    width: 60vh;
+}
+
+.display-center{
+    display: flex;
+    justify-content: center;
+}
+
+.sel-style-item{
+    height:20vh;
+    width: 20vh;
+    margin: 0 10px;
 }
