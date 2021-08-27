@@ -1,7 +1,7 @@
 function preload_ing(){
     for(let i=0;i<styles.length;i++){
-        img = new Image();
         for(let j=1;j<=3;j++){
+            img = new Image();
             img.src = styles[i][j];
         }
     }
