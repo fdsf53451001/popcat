@@ -23,7 +23,6 @@ function onKeyReleased(e){
     if(status==1 && !ban){
         document.getElementById('cat').setAttribute('src',styles[current_style][1]);
         update_point(point+1);
-        set_point_view();
         status=0;
     }
 }
@@ -39,10 +38,11 @@ preload_ing();
 document.getElementById('cat').setAttribute('src',styles[current_style][1]);
 
 document.addEventListener('keydown',onKeyPressed);
-document.addEventListener('mousedown',onKeyPressed);
-
+document.addEventListener('pointerdown',onKeyPressed);
 document.addEventListener('keyup',onKeyReleased);
-document.addEventListener('mouseup',onKeyReleased);
+document.addEventListener('pointerup',onKeyReleased);
+// if use mouseup/mousedown, touch screen with fire both on finger leave screen
+// which means photo change too quick for user to see.
 
 setInterval(function(){ //watchdog, used to prevent bot
     if(point-last_point>100){
