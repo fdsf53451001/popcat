@@ -1,3 +1,12 @@
+function preload_ing(){
+    for(let i=0;i<styles.length;i++){
+        img = new Image();
+        for(let j=1;j<=3;j++){
+            img.src = styles[i][j];
+        }
+    }
+}
+
 function update_point(p){
     point = p;
     set_point_view();
@@ -25,6 +34,8 @@ function banHappened(){
 }
 
 // initialize
+preload_ing();
+
 document.getElementById('cat').setAttribute('src',styles[current_style][1]);
 
 document.addEventListener('keydown',onKeyPressed);
