@@ -38,9 +38,15 @@ preload_ing();
 document.getElementById('cat').setAttribute('src',styles[current_style][1]);
 
 document.addEventListener('keydown',onKeyPressed);
-document.addEventListener('pointerdown',onKeyPressed);
+document.addEventListener('pointerdown',function(e){
+    if(e.target.id!='cat'){return;}
+    onKeyPressed(e);
+});
 document.addEventListener('keyup',onKeyReleased);
-document.addEventListener('pointerup',onKeyReleased);
+document.addEventListener('pointerup',function(e){
+    if(e.target.id!='cat'){return;}
+    onKeyReleased(e);
+});
 // if use mouseup/mousedown, touch screen with fire both on finger leave screen
 // which means photo change too quick for user to see.
 
