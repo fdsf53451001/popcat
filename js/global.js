@@ -12,5 +12,6 @@ var status = 0; //0=not press 1=press
 var styles = [
     ['style1','src/CAT1.JPG','src/CAT2.JPG','src/CAT_ERR.JPG'],
     ['style2','src/CAT21.JPG','src/CAT22.JPG','src/CAT_ERR.JPG'],
+    ['style3','src/CAT31.JPG','src/CAT32.JPG','src/CAT_ERR.JPG'],
 ]
 var current_style = 0;
