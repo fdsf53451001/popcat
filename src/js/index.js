@@ -1,4 +1,4 @@
-function preload_ing(){
+function preload_img(){
     for(let i=0;i<styles.length;i++){
         for(let j=1;j<=3;j++){
             img = new Image();
@@ -32,29 +32,38 @@ function banHappened(){
     document.getElementById('cat').setAttribute('src',styles[current_style][3]);
 }
 
-// initialize
-preload_ing();
+function init(){    // initialize
+    // loading page
+    preload_img();
+    set_style_sel();
 
-document.getElementById('cat').setAttribute('src',styles[current_style][1]);
+    // setting respond
+    document.addEventListener('keydown',onKeyPressed);
+    document.addEventListener('pointerdown',function(e){
+        if(e.target.id!='cat'){return;}
+        onKeyPressed(e);
+    });
+    document.addEventListener('keyup',onKeyReleased);
+    document.addEventListener('pointerup',function(e){
+        if(e.target.id!='cat'){return;}
+        onKeyReleased(e);
+    });
+    // if use mouseup/mousedown, touch screen with fire both on finger leave screen
+    // which means photo change too quick for user to see.
 
-document.addEventListener('keydown',onKeyPressed);
-document.addEventListener('pointerdown',function(e){
-    if(e.target.id!='cat'){return;}
-    onKeyPressed(e);
-});
-document.addEventListener('keyup',onKeyReleased);
-document.addEventListener('pointerup',function(e){
-    if(e.target.id!='cat'){return;}
-    onKeyReleased(e);
-});
-// if use mouseup/mousedown, touch screen with fire both on finger leave screen
-// which means photo change too quick for user to see.
+    setInterval(function(){ //watchdog, used to prevent bot
+        if(point-last_point>100){
+            banHappened();
+        }
+        last_point = point
+    },1000);
 
-setInterval(function(){ //watchdog, used to prevent bot
-    if(point-last_point>100){
-        banHappened();
+    // register service worker
+    if('serviceWorker' in navigator){
+        navigator.serviceWorker.register('src/js/sw.js')
+        .then(reg=>{console.log('SW registered!',reg);})
+        .catch(err=>{console.log('ERR',err);});
     }
-    last_point = point
-},1000);
+}
 
-set_style_sel();
+init();
