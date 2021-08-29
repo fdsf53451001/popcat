@@ -5,10 +5,6 @@ var ban = false;
 
 var status = 0; //0=not press 1=press
 
-// var current_cat1 = 'src/CAT21.JPG';
-// var current_cat2 = 'src/CAT22.JPG';
-// var current_catERR = 'src/CAT_ERR.JPG';
-
 var styles = [
     ['style1','asset/photo/CAT1.JPG','asset/photo/CAT2.JPG','asset/photo/CAT_ERR.JPG'],
     ['style2','asset/photo/CAT21.JPG','asset/photo/CAT22.JPG','asset/photo/CAT_ERR.JPG'],
