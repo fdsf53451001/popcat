@@ -1,3 +1,14 @@
+const cacheFiles = [
+    'index.html',
+    'index.css',
+    'src/js/global.js',
+    'src/js/index.js',
+    'src/js/view.js',
+    'asset/photo/CAT1.JPG',
+    'asset/photo/CAT2.JPG',
+]
+const cacheName = 'static-v1';
+
 //install
 self.addEventListener('install',event=>{
     console.log('installing');
@@ -28,13 +39,13 @@ self.addEventListener('activate',event=>{
 
 //fetch
 self.addEventListener('fetch',event=>{
-    console.log('now fetch!');
+    console.log('now fetch!',event);
     const dataUrl = 'http://localhost';
 	event.respondWith(
 		caches.match(event.request).then(function (response) {
 			return response || fetch(event.request).then(res =>
 				// 存 caches 之前，要先打開 caches.open(dataCacheName)
-				caches.open(dataCacheName)
+				caches.open(cacheName)
 				.then(function(cache) {
 					// cache.put(key, value)
 					// 下一次 caches.match 會對應到 event.request

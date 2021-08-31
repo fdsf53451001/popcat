@@ -33,6 +33,18 @@ function banHappened(){
 }
 
 function init(){    // initialize
+    // check device
+    const mobileDevice = ['Android', 'webOS', 'iPhone', 'iPad', 'iPod', 'BlackBerry', 'Windows Phone'];
+    isMobile = mobileDevice.some(e => navigator.userAgent.match(e));
+    console.log(isMobile)
+
+    // register service worker
+    if('serviceWorker' in navigator){
+        navigator.serviceWorker.register('sw.js')
+        .then(reg=>{console.log('SW registered!',reg);})
+        .catch(err=>{console.log('ERR',err);});
+    }
+
     // loading page
     preload_img();
     set_style_sel();
@@ -58,12 +70,7 @@ function init(){    // initialize
         last_point = point
     },1000);
 
-    // register service worker
-    if('serviceWorker' in navigator){
-        navigator.serviceWorker.register('src/js/sw.js')
-        .then(reg=>{console.log('SW registered!',reg);})
-        .catch(err=>{console.log('ERR',err);});
-    }
+    
 }
 
 init();
