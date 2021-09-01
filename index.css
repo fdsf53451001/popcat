@@ -7,7 +7,12 @@
 
 #btn-more{
     width: 60vh;
+    font-size: 1rem;
 }
+
+.title-text{
+    font-size: 3rem;
+} 
 
 .display-center{
     display: flex;
@@ -27,5 +32,11 @@
     }
     #btn-more{
         width: 100vw;
+        font-size: 2rem;
+    }
+    .sel-style-item{
+        height:18vh;
+        width: 18vh;
+        margin: 20px 10px 20px 10px;
     }
 }
