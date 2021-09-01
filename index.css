@@ -3,6 +3,10 @@
     width: 60vh;
 }
 
+#btn-more{
+    width: 60vh;
+}
+
 .display-center{
     display: flex;
     justify-content: center;
@@ -17,6 +21,9 @@
 @media only screen and (max-width: 1281px) { 
     #cat{
         height: 100vw;
+        width: 100vw;
+    }
+    #btn-more{
         width: 100vw;
     }
 }

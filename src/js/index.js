@@ -7,6 +7,12 @@ function preload_img(){
     }
 }
 
+function set_style(i){
+    current_style = i;
+    update_point(0);
+    set_style_view(i);
+}
+
 function update_point(p){
     point = p;
     set_point_view();

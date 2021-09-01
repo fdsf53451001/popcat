@@ -2,6 +2,7 @@ var point = 0;
 var last_point = 0;
 
 var isMobile = false;
+var styleCount = 5;
 
 var ban = false;
 

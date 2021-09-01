@@ -1,5 +1,4 @@
 function set_style_sel(){
-    let styleCount = 5;
     if(isMobile){styleCount=2;}
     for(let i=0;i<Math.ceil(styles.length/styleCount);i++){
         if(i==0){ //first section
@@ -21,15 +20,15 @@ function set_style_sel(){
     }
 }
 
-function set_style(i){
-    current_style = i;
+function set_style_view(i){
     document.getElementById('cat').setAttribute('src',styles[current_style][1]);
-    update_point(0);
-
-    var collapseElementList = [].slice.call(document.querySelectorAll('#style-hide'))
-    var collapseList = collapseElementList.map(function (collapseEl) {
-    return new bootstrap.Collapse(collapseEl)
-    })
+    //collapse show area
+    if(i>=styleCount){ 
+        var collapseElementList = [].slice.call(document.querySelectorAll('#style-hide'))
+        var collapseList = collapseElementList.map(function (collapseEl) {
+        return new bootstrap.Collapse(collapseEl)
+        })
+    }
 }
 
 function set_point_view(){
