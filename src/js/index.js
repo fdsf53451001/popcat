@@ -22,6 +22,11 @@ function onKeyPressed(e){
     if(status==0 && !ban){
         document.getElementById('cat').setAttribute('src',styles[current_style][2])
         status=1;
+        // pop_music.load();
+        // pop_music.pause();
+        // pop_music.currentTime = 0;
+        // console.log(pop_music.currentTime);
+        // pop_music.play();
     }
 }
 
