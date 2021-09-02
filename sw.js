@@ -39,16 +39,13 @@ self.addEventListener('activate',event=>{
 
 //fetch
 self.addEventListener('fetch',event=>{
-    console.log('now fetch!',event);
-    const dataUrl = 'http://localhost';
+    console.log('now fetch!',event.request);
 	event.respondWith(
 		caches.match(event.request).then(function (response) {
 			return response || fetch(event.request).then(res =>
-				// 存 caches 之前，要先打開 caches.open(dataCacheName)
 				caches.open(cacheName)
 				.then(function(cache) {
 					// cache.put(key, value)
-					// 下一次 caches.match 會對應到 event.request
 					cache.put(event.request, res.clone());
 					return res;
 				})

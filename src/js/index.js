@@ -50,11 +50,11 @@ function init(){    // initialize
     console.log(isMobile)
 
     // register service worker
-    if('serviceWorker' in navigator){
-        navigator.serviceWorker.register('sw.js')
-        .then(reg=>{console.log('SW registered!',reg);})
-        .catch(err=>{console.log('ERR',err);});
-    }
+    // if('serviceWorker' in navigator){
+    //     navigator.serviceWorker.register('sw.js')
+    //     .then(reg=>{console.log('SW registered!',reg);})
+    //     .catch(err=>{console.log('ERR',err);});
+    // }
 
     // loading page
     preload_img();
