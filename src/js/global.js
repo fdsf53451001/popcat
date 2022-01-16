@@ -14,7 +14,8 @@ const styles = [
     ['style3','asset/photo/CAT31.JPG','asset/photo/CAT32.JPG','asset/photo/CAT_ERR.JPG'],
     ['style4','asset/photo/CAT41.JPG','asset/photo/CAT42.JPG','asset/photo/CAT_ERR.JPG'],
     ['style5','asset/photo/CAT51.JPG','asset/photo/CAT52.JPG','asset/photo/CAT_ERR.JPG'],
-    ['style6','asset/photo/subaru_meme_1.JPG','asset/photo/subaru_meme_2.JPG','asset/photo/CAT_ERR.JPG'],
+    ['style6','asset/photo/CAT61.JPG','asset/photo/CAT62.JPG','asset/photo/CAT_ERR.JPG'],
+    ['style7','asset/photo/subaru_meme_1.JPG','asset/photo/subaru_meme_2.JPG','asset/photo/CAT_ERR.JPG'],
 ]
 var current_style = 0;
 
